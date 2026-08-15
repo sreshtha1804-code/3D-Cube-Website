@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced Interactive 3D Cube</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- 3D Cube -->
+  <div class="scene" id="cube">
+    <div class="face front">Front</div>
+    <div class="face back">Back</div>
+    <div class="face right">Right</div>
+    <div class="face left">Left</div>
+    <div class="face top">Top</div>
+    <div class="face bottom">Bottom</div>
+  </div>
+
+  <!-- Floating UI -->
+  <div class="color-box" id="colorBox">
+    <strong>Cube Controls</strong>
+
+    <label>
+      Cube Color
+      <input type="color" id="colorPicker" value="#4facfe">
+    </label>
+
+    <div class="toggle">
+      <label>Auto Rotate</label>
+      <input type="checkbox" id="autoToggle" checked>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

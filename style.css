@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  perspective: 1200px;
+  overflow: hidden;
+}
+
+/* ================= CUBE ================= */
+.scene {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: white;
+  background: #4facfe;
+  border-radius: 15px;
+  border: 2px solid rgba(255,255,255,0.4);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.front  { transform: translateZ(150px); }
+.back   { transform: rotateY(180deg) translateZ(150px); }
+.right  { transform: rotateY(90deg) translateZ(150px); }
+.left   { transform: rotateY(-90deg) translateZ(150px); }
+.top    { transform: rotateX(90deg) translateZ(150px); }
+.bottom { transform: rotateX(-90deg) translateZ(150px); }
+
+/* ================= FLOATING UI ================= */
+.color-box {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 14px 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: grab;
+  z-index: 10;
+}
+
+.color-box:active {
+  cursor: grabbing;
+}
+
+.color-box label {
+  font-size: 14px;
+}
+
+.color-box input {
+  cursor: pointer;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
