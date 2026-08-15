@@ -4,12 +4,12 @@ const colorPicker = document.getElementById('colorPicker');
 const autoToggle = document.getElementById('autoToggle');
 const colorBox = document.getElementById('colorBox');
 
-/* ================= STATE ================= */
+/*state*/
 let rotateX = 0;
 let rotateY = 0;
 let autoRotate = true;
 
-/* ================= AUTO ROTATION ================= */
+/*auto rotation*/
 function autoRotateLoop() {
   if (autoRotate) {
     rotateY += 0.3;
@@ -19,19 +19,19 @@ function autoRotateLoop() {
 }
 autoRotateLoop();
 
-/* ================= COLOR CHANGE ================= */
+/*color change*/
 colorPicker.addEventListener('input', () => {
   faces.forEach(face => {
     face.style.background = colorPicker.value;
   });
 });
 
-/* ================= TOGGLE AUTO ROTATE ================= */
+/*toggle auto rotate*/
 autoToggle.addEventListener('change', () => {
   autoRotate = autoToggle.checked;
 });
 
-/* ================= MANUAL ROTATION ================= */
+/*manual rotation*/
 let isDraggingCube = false;
 let lastX = 0;
 let lastY = 0;
@@ -58,7 +58,7 @@ document.addEventListener('mouseup', () => {
   isDraggingCube = false;
 });
 
-/* ================= TOUCH SUPPORT ================= */
+/*touch support*/
 cube.addEventListener('touchstart', e => {
   if (autoRotate) return;
   const touch = e.touches[0];
@@ -79,7 +79,7 @@ cube.addEventListener('touchmove', e => {
   lastY = touch.clientY;
 }, { passive: false });
 
-/* ================= DRAGGABLE UI ================= */
+/*draggable ui*/
 let dragUI = false;
 let offsetX = 0;
 let offsetY = 0;
